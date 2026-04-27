@@ -27,7 +27,10 @@
 - **Targets:** Linux (RSYNC + Roxy-WI Web App)
 - **Key Vulnerability:** RSYNC Enumeration + Unauthenticated RCE
 - **Flags:** 4
-
+### Lab 5 — Exploitation CTF 1
+- **Targets:** Linux (FlatCore CMS + WordPress)
+- **Key Vulnerability:** FlatCore CMS RCE + WordPress Duplicator Plugin File Read
+- **Flags:** 4
 ---
 
 ## Methodology (Applied Across All Labs)
@@ -76,6 +79,13 @@
 - **Flag 2** — Found inside RSYNC module backup files
 - **Flag 3** — Retrieved after Roxy-WI RCE exploit (target2)
 - **Flag 4** — Found inside `/etc/cron.d/` scheduled job file
+- 
+### Lab 5 — Exploitation CTF 1
+- **Flag 1** — Retrieved from `/flag1.txt` after exploiting FlatCore CMS 2.0.7 RCE (target1)
+- **Flag 2** — Obtained by brute-forcing SSH credentials of weak user `iamaweakuser` (target1)
+- **Flag 3** — Retrieved from `/flag3.txt` via WordPress Duplicator plugin file read (target2)
+- **Flag 4** — Found in home directory of no-auth user `iamacrazyfreeuser` via SSH (target2)
+
 
 ---
 
