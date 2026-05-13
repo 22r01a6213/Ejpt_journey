@@ -1,6 +1,6 @@
 # eJPT Penetration Testing Lab Writeups
 
-**Author:** Showrya Boga  
+**Author:** Showrya   
 **Platform:** INE  
 **Tool:** Kali Linux + Metasploit Framework  
 
@@ -39,6 +39,10 @@
 - **Targets:** Windows (SSH + Privilege Escalation)
 - **Key Vulnerability:** SSH Brute-Force + NTLM Hash Cracking + PrintSpoofer Privilege Escalation
 - **Flags:** 4
+### Lab 8 — Web Application Penetration Testing CTF 1
+- **Targets:** Linux (Apache Web Application)
+- **Key Vulnerability:** LFI + Directory Enumeration + Brute-Force + SQL Injection
+- **Flags:** 4
 ---
 
 ## Methodology (Applied Across All Labs)
@@ -54,7 +58,7 @@
 - `Nmap` — Port scanning and service enumeration
 - `Metasploit Framework` — Exploitation and post-exploitation
 - `SearchSploit` — Exploit discovery and local exploit database search
-- `Hydra` — SSH brute-forcing and credential attacks
+- `Hydra` — SSH brute-forcing, credential and login form attacks
 - `Hashcat` — NTLM and password hash cracking
 - `crackmapexec` — SMB brute-forcing and enumeration
 - `smbclient` / `enum4linux` — SMB share enumeration
@@ -66,7 +70,9 @@
 - `icacls` — Windows ACL permission inspection and modification
 - `robocopy` — Windows file copy with backup privilege bypass
 - `python3` — Running exploit scripts (e.g., FlatCore CMS RCE)
-- `ping` / `Nmap` — Host discovery across all labs
+- `Dirb` — Web directory and file enumeration
+- `Burp Suite` — Web application testing and request inspection
+- `ping` ` — Host discovery across all labs
 ---
 
 ## Flags Summary (16 Total)
@@ -113,7 +119,12 @@
 - **Flag 2** — Cracked David's NTLM hash from `hashdump.txt` using Hashcat
 - **Flag 3** — Accessed `C:\Windows\System32\config` after SYSTEM shell via PrintSpoofer64
 - **Flag 4** — Bypassed ACL deny rule on Administrator's flag directory via `icacls` / `robocopy`
-
+  
+### Lab 8 — Web Application Penetration Testing CTF 1
+- **Flag 1** — Retrieved via LFI vulnerability by manipulating file parameter to `/flag.txt`
+- **Flag 2** — Found in `/secured/flag.txt` after Dirb revealed hidden directory
+- **Flag 3** — Obtained after brute-forcing login form credentials (`guest:butterfly1`) using Hydra
+- **Flag 4** — Retrieved by exploiting SQL injection (`' OR 1=1 -- -`) on the login form
 ---
 
 > These labs were completed as part of eJPT exam preparation on the INE platform.
