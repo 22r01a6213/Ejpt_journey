@@ -31,6 +31,14 @@
 - **Targets:** Linux (FlatCore CMS + WordPress)
 - **Key Vulnerability:** FlatCore CMS RCE + WordPress Duplicator Plugin File Read
 - **Flags:** 4
+### Lab 6  — Post-Exploitation CTF 1
+- **Targets:** Linux (libssh + Shadow File Misconfiguration)
+- **Key Vulnerability:** libssh Auth Bypass + World-Writable /etc/shadow
+- **Flags:** 5
+### Lab 7 — Post-Exploitation CTF 2
+- **Targets:** Windows (SSH + Privilege Escalation)
+- **Key Vulnerability:** SSH Brute-Force + NTLM Hash Cracking + PrintSpoofer Privilege Escalation
+- **Flags:** 4
 ---
 
 ## Methodology (Applied Across All Labs)
@@ -85,7 +93,19 @@
 - **Flag 2** — Obtained by brute-forcing SSH credentials of weak user `iamaweakuser` (target1)
 - **Flag 3** — Retrieved from `/flag3.txt` via WordPress Duplicator plugin file read (target2)
 - **Flag 4** — Found in home directory of no-auth user `iamacrazyfreeuser` via SSH (target2)
-
+  
+### Lab 6 — Post-Exploitation CTF 1
+- **Flag 1** — Found in `/etc/passwd` after libssh exploit on target1
+- **Flag 2** — Found in `/etc/group` during post-exploitation enumeration
+- **Flag 3** — Discovered inside a cron job entry under `/etc/cron.*`
+- **Flag 4** — Found in DNS configuration files on target1
+- **Flag 5** — Retrieved from root's home directory after injecting hash into world-writable `/etc/shadow` on target2
+  
+### Lab 7 — Post-Exploitation CTF 2
+- **Flag 1** — Retrieved from Alice's home directory after SSH brute-force (target)
+- **Flag 2** — Cracked David's NTLM hash from `hashdump.txt` using Hashcat
+- **Flag 3** — Accessed `C:\Windows\System32\config` after SYSTEM shell via PrintSpoofer64
+- **Flag 4** — Bypassed ACL deny rule on Administrator's flag directory via `icacls` / `robocopy`
 
 ---
 
