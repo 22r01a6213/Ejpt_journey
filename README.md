@@ -51,15 +51,22 @@
 ---
 
 ## Tools Used
-
 - `Nmap` — Port scanning and service enumeration
 - `Metasploit Framework` — Exploitation and post-exploitation
-- `crackmapexec` — SMB brute-forcing
+- `SearchSploit` — Exploit discovery and local exploit database search
+- `Hydra` — SSH brute-forcing and credential attacks
+- `Hashcat` — NTLM and password hash cracking
+- `crackmapexec` — SMB brute-forcing and enumeration
 - `smbclient` / `enum4linux` — SMB share enumeration
 - `cadaver` — WebDAV file upload
 - `rsync` — RSYNC module enumeration
 - `netcat` — Reverse shell listener
-
+- `PrintSpoofer64` — Windows local privilege escalation (SYSTEM shell)
+- `certutil` — File transfer on Windows targets
+- `icacls` — Windows ACL permission inspection and modification
+- `robocopy` — Windows file copy with backup privilege bypass
+- `python3` — Running exploit scripts (e.g., FlatCore CMS RCE)
+- `ping` / `Nmap` — Host discovery across all labs
 ---
 
 ## Flags Summary (16 Total)
